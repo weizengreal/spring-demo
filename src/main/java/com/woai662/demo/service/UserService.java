@@ -1,7 +1,7 @@
-package com.woai662.service;
+package com.woai662.demo.service;
 
-import com.woai662.entity.User;
-import com.woai662.repository.UserRepository;
+import com.woai662.demo.entity.User;
+import com.woai662.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

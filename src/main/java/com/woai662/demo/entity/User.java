@@ -1,4 +1,4 @@
-package com.woai662.entity;
+package com.woai662.demo.entity;
 
 
 import javax.persistence.*;

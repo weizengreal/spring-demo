@@ -1,11 +1,11 @@
-package com.woai662.configuration;
+package com.woai662.demo.configuration;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "com.woai662")
+@ComponentScan(basePackages = "com.woai662.demo")
 public class Entry {
 
     public static void main(String[] args) throws Exception {

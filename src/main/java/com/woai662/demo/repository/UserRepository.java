@@ -1,6 +1,6 @@
-package com.woai662.repository;
+package com.woai662.demo.repository;
 
-import com.woai662.entity.User;
+import com.woai662.demo.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
