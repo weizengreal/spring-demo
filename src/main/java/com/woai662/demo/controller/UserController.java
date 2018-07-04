@@ -33,6 +33,18 @@ public class UserController {
     }
 
 
+    @RequestMapping(value = "post",method = RequestMethod.POST)
+    public String post() {
+        try {
+            Thread.sleep(1000 * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "user/post";
+    }
+
+
+
 
 
 }
