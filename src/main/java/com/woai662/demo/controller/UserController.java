@@ -1,19 +1,20 @@
 package com.woai662.demo.controller;
 
 import com.woai662.demo.entity.User;
+import com.woai662.demo.service.RuntimeService;
 import com.woai662.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping(value = "/user")
 @Controller
 public class UserController {
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private RuntimeService runtimeService;
 
     @RequestMapping(value = "index")
     public String index() {
@@ -32,6 +33,12 @@ public class UserController {
         }
     }
 
+    @RequestMapping(value = "getOsInfo",method = RequestMethod.GET)
+    @ResponseBody
+    public String getOsInfo() {
+        runtimeService.printOsInfo();
+        return "haha";
+    }
 
     @RequestMapping(value = "post",method = RequestMethod.POST)
     public String post() {
