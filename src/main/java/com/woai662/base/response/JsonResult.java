@@ -2,9 +2,7 @@ package com.woai662.base.response;
 
 import com.woai662.base.enums.ResponseCode;
 
-import java.io.Serializable;
-
-public class JsonResult implements Serializable{
+public class JsonResult{
 
     private int code;
 
