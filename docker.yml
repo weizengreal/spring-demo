@@ -1,0 +1,4 @@
+# -p 参数，映射mysql端口和主机端口(前面代表 host port)
+# -v 挂载指定文件夹到容器的mysql文件夹
+
+docker run -p 3306:3306 -v /Users/weizeng/study/docker/mysql-env:/var/lib/mysql  --name mysql_spring_boot_demo -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7
