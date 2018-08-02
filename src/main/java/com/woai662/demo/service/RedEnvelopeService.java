@@ -1,16 +1,16 @@
 package com.woai662.demo.service;
 
-import com.woai662.redis.RedPointDao;
+import com.woai662.redis.RedEnvelopeDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class RedPointService{
+public class RedEnvelopeService {
 
     @Autowired
-    private RedPointDao redPointDao;
+    private RedEnvelopeDao redEnvelopeDao;
 
-    public void grapRedPoint(double total_money,int total_people) {
+    public void grapRedEnvelope(double total_money,int total_people) {
         double minPoint = 0.01;
 
         for (int i = 0; i < total_people - 1; i++) {
@@ -25,13 +25,13 @@ public class RedPointService{
     }
 
 
-    public boolean grapRedPoint_v1(String redPointId,int totalPoint,int totalPeople) {
+    public boolean grapRedEnvelope_v1(String redEnvelopeId,int totalPoint,int totalPeople) {
         int point = this.calculateRedPoint(totalPoint,totalPeople);
         // TODO 将积分数据写入对应用户的数据包中
         this.saveUserInfo();
 
         // TODO 可能出现幻读情况，需要解决
-        return this.redPointDao.saveTotalPoint(redPointId,totalPoint - point);
+        return this.redEnvelopeDao.saveTotalPoint(redEnvelopeId,totalPoint - point);
     }
 
     /**
@@ -55,8 +55,7 @@ public class RedPointService{
             return totalPoint;
         }
 
-        double safePoint = (totalPoint - (totalPeople - 1) * minPoint)
-                / (totalPeople - 1);
+        double safePoint = minPoint / (totalPeople - 1);
         return  (int)(Math.random()
                 * (safePoint * 100 - minPoint * 100) + minPoint * 100) / 100;
     }
